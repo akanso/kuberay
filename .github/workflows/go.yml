@@ -2,7 +2,7 @@ name: Go
 
 on:
   push:
-    branches: [ akanso-actions-1 ]
+    branches: [ design-1b ]
   pull_request:
     branches: [ master ]
 
