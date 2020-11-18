@@ -22,10 +22,13 @@ jobs:
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
+    
+    - name: list directories
+      working-directory: ${{env.working-directory}}
+      run: ls -R
 
     - name: Get dependencies
       working-directory: ${{env.working-directory}}
-      run: ls -R
       run: |
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
