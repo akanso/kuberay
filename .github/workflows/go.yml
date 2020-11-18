@@ -28,7 +28,13 @@ jobs:
     - name: list directories
       working-directory: ${{env.working-directory}}
       run: ls -R
-
+    
+    - name: install kubebuilder
+      run: |
+        wget https://github.com/kubernetes-sigs/kubebuilder/releases/download/v2.0.0-alpha.1/kubebuilder_2.0.0-alpha.1_linux_amd64.tar.gz
+        tar -zxvf  kubebuilder_2.0.0-alpha.1_linux_amd64.tar.gz
+        sudo mv kubebuilder_2.0.0-alpha.1_linux_amd64 /usr/local/kubebuilder
+       
     - name: Get dependencies
       working-directory: ${{env.working-directory}}
       run: |
