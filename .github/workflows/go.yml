@@ -10,7 +10,7 @@ jobs:
 
   build:
     env:
-      working-directory: ./msft-operator/ray-operator
+      working-directory: msft-operator/ray-operator
     name: Build
     runs-on: ubuntu-latest
     steps:
