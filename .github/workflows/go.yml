@@ -10,7 +10,7 @@ jobs:
 
   build:
     env:
-      working-directory: msft-operator/ray-operator
+      working-directory: ./msft-operator/ray-operator
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +25,7 @@ jobs:
 
     - name: Get dependencies
       working-directory: ${{env.working-directory}}
+      run: ls -R
       run: |
         go get -v -t -d ./...
         if [ -f Gopkg.toml ]; then
